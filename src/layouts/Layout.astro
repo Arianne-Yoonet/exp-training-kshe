@@ -30,7 +30,7 @@ const { title, description = "KSHE — Premium Skincare & Wellness" } = Astro.pr
         <nav id="main-nav">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/about" class="nav-about">About</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
@@ -182,6 +182,8 @@ const { title, description = "KSHE — Premium Skincare & Wellness" } = Astro.pr
     background: var(--bark);
     transition: width var(--transition);
   }
+
+  #main-nav a.nav-about { color: #fff; }
 
   #main-nav a:hover, #main-nav a.active { color: var(--bark); }
   #main-nav a:hover::after, #main-nav a.active::after { width: 100%; }
