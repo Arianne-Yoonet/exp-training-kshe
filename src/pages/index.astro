@@ -1,0 +1,459 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="section-label">Est. 2020 — Australia</span>
+      <h1>Skincare<br /><em>as nature<br />intended</em></h1>
+      <p>Clean, considered formulas crafted from the finest botanicals. Because your skin deserves nothing less.</p>
+      <div class="hero-actions">
+        <a href="/about" class="btn btn-light">Discover Our Story</a>
+        <a href="/contact" class="btn btn-outline-light">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="container intro-grid">
+      <div class="intro-text">
+        <span class="section-label">Our Philosophy</span>
+        <h2>Rooted in nature,<br />refined by science</h2>
+        <p>At KSHE, we believe that effective skincare begins with integrity. Every ingredient is chosen with intention — ethically sourced, rigorously tested, and thoughtfully combined to work in harmony with your skin's natural rhythms.</p>
+        <a href="/about" class="btn" style="margin-top:2rem">Learn More</a>
+      </div>
+      <div class="intro-visual">
+        <div class="visual-block v1"></div>
+        <div class="visual-block v2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="container">
+      <div class="values-header">
+        <span class="section-label">What We Stand For</span>
+        <h2>Three principles,<br />one commitment</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">✦</div>
+          <h3>Pure Ingredients</h3>
+          <p>We use only clean, non-toxic formulations. No fillers, no compromises — just what your skin truly needs.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✦</div>
+          <h3>Sustainable Craft</h3>
+          <p>From packaging to production, every decision is made with the planet in mind. Beauty that gives back.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✦</div>
+          <h3>Visible Results</h3>
+          <p>Backed by dermatological research and formulated for real, measurable results you can see and feel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <section class="feature-strip">
+    <div class="strip-inner">
+      <div class="strip-text">
+        <span class="section-label">Featured</span>
+        <h2>The KSHE<br />signature range</h2>
+        <p>A carefully curated collection of serums, moisturisers, and treatments designed to work as a cohesive ritual for radiant, healthy skin.</p>
+        <a href="/contact" class="btn btn-light" style="margin-top:2rem">Enquire Now</a>
+      </div>
+      <div class="strip-blocks">
+        <div class="product-card">
+          <div class="product-img p1"></div>
+          <div class="product-info">
+            <h3>Renewal Serum</h3>
+            <p>Brightening & resurfacing</p>
+          </div>
+        </div>
+        <div class="product-card featured">
+          <div class="product-img p2"></div>
+          <div class="product-info">
+            <h3>Hydra Barrier Crème</h3>
+            <p>Deep moisture & protection</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img p3"></div>
+          <div class="product-info">
+            <h3>Botanical Eye Elixir</h3>
+            <p>Firming & illuminating</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <span class="section-label">What Our Clients Say</span>
+      <div class="testi-grid">
+        <blockquote class="testi-card">
+          <p>"KSHE completely transformed my skin. Within weeks I noticed a visible difference — my skin felt calmer, brighter, and more even."</p>
+          <cite>— Sophie M., Sydney</cite>
+        </blockquote>
+        <blockquote class="testi-card">
+          <p>"I've tried countless skincare brands. Nothing compares. The formulas feel luxurious yet gentle, and the results speak for themselves."</p>
+          <cite>— Annalise T., Melbourne</cite>
+        </blockquote>
+        <blockquote class="testi-card">
+          <p>"Finally a brand that truly understands clean beauty. Knowing exactly what's in every product gives me complete peace of mind."</p>
+          <cite>— Rachel K., Brisbane</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container cta-inner">
+      <h2>Ready to begin<br /><em>your ritual?</em></h2>
+      <p>Connect with our team for a personalised skincare consultation.</p>
+      <a href="/contact" class="btn btn-light">Contact Us</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 2rem 6rem;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 40%, rgba(107, 87, 68, 0.4) 0%, transparent 60%),
+      linear-gradient(160deg, #1a1109 0%, #2a1f17 50%, #3d2e24 100%);
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f7f3ee' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  .hero .section-label { color: var(--stone); }
+
+  .hero h1 {
+    color: var(--cream);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sand);
+  }
+
+  .hero p {
+    color: var(--stone);
+    font-size: 1rem;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-outline-light {
+    display: inline-block;
+    padding: 0.85rem 2.5rem;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(196, 181, 165, 0.4);
+    color: var(--stone);
+    background: transparent;
+    transition: border-color var(--transition), color var(--transition);
+  }
+  .btn-outline-light:hover { border-color: var(--cream); color: var(--cream); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 3rem; right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 2;
+  }
+
+  .hero-scroll span {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    writing-mode: vertical-rl;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--taupe), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(0.6); }
+  }
+
+  /* ── INTRO ── */
+  .intro { background: var(--warm-white); }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .intro-text h2 { margin: 0.5rem 0 1.5rem; }
+
+  .intro-visual {
+    position: relative;
+    height: 480px;
+  }
+
+  .visual-block {
+    position: absolute;
+    border-radius: 2px;
+  }
+
+  .v1 {
+    width: 75%;
+    height: 85%;
+    top: 0; right: 0;
+    background: linear-gradient(135deg, var(--sand), var(--stone));
+  }
+
+  .v2 {
+    width: 55%;
+    height: 55%;
+    bottom: 0; left: 0;
+    background: linear-gradient(135deg, var(--bark), var(--taupe));
+    opacity: 0.7;
+  }
+
+  /* ── VALUES ── */
+  .values { background: var(--cream); }
+
+  .values-header { text-align: center; margin-bottom: 4rem; }
+  .values-header h2 { margin-top: 0.5rem; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .value-card {
+    padding: 2.5rem;
+    border: 1px solid var(--sand);
+    background: var(--warm-white);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .value-card:hover {
+    box-shadow: 0 8px 40px rgba(42, 31, 23, 0.08);
+    transform: translateY(-4px);
+  }
+
+  .value-icon {
+    font-size: 1.25rem;
+    color: var(--taupe);
+    margin-bottom: 1.5rem;
+  }
+
+  .value-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── FEATURE STRIP ── */
+  .feature-strip {
+    padding: 0;
+    background: var(--dark);
+  }
+
+  .strip-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    min-height: 600px;
+  }
+
+  .strip-text {
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .strip-text .section-label { color: var(--taupe); }
+  .strip-text h2 { color: var(--cream); margin: 0.5rem 0 1.5rem; }
+  .strip-text p { color: var(--stone); }
+
+  .strip-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-left: 1px solid rgba(196, 181, 165, 0.1);
+  }
+
+  .product-card {
+    border-left: 1px solid rgba(196, 181, 165, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: background var(--transition);
+  }
+
+  .product-card:first-child { border-left: none; }
+  .product-card.featured { background: rgba(255,255,255,0.03); }
+
+  .product-img {
+    flex: 1;
+    min-height: 360px;
+  }
+
+  .p1 { background: linear-gradient(160deg, #4a3828 0%, #6b5744 100%); }
+  .p2 { background: linear-gradient(160deg, #7a6455 0%, #9c8878 100%); }
+  .p3 { background: linear-gradient(160deg, #3d2e24 0%, #5a4535 100%); }
+
+  .product-info {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(196, 181, 165, 0.1);
+  }
+
+  .product-info h3 {
+    color: var(--cream);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-info p { color: var(--taupe); font-size: 0.8rem; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--warm-white); }
+
+  .testimonials .section-label { display: block; text-align: center; margin-bottom: 3rem; }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .testi-card {
+    padding: 2.5rem;
+    background: var(--cream);
+    border-bottom: 2px solid var(--sand);
+    position: relative;
+  }
+
+  .testi-card::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 5rem;
+    color: var(--sand);
+    position: absolute;
+    top: 1rem; left: 1.5rem;
+    line-height: 1;
+  }
+
+  .testi-card p {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testi-card cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--taupe);
+    font-style: normal;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--bark) 0%, var(--dark) 100%);
+    text-align: center;
+  }
+
+  .cta-inner { max-width: 600px; }
+
+  .cta-banner h2 {
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+
+  .cta-banner h2 em {
+    font-style: italic;
+    color: var(--sand);
+  }
+
+  .cta-banner p {
+    color: var(--stone);
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .strip-inner { grid-template-columns: 1fr; }
+    .strip-blocks { grid-template-columns: repeat(3, 1fr); border-left: none; }
+    .strip-text { padding: 4rem 2rem; }
+  }
+
+  @media (max-width: 768px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .intro-visual { height: 300px; }
+    .values-grid { grid-template-columns: 1fr; }
+    .strip-blocks { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .product-img { min-height: 220px; }
+  }
+</style>

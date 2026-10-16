@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Get in touch with the KSHE team — we're here to help with any questions or enquiries.">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Reach Out</span>
+      <h1>Let's talk<br /><em>skincare</em></h1>
+    </div>
+  </section>
+
+  <!-- CONTACT BODY -->
+  <section class="contact-section">
+    <div class="container contact-layout">
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <div class="info-block">
+          <span class="info-label">General Enquiries</span>
+          <a href="mailto:hello@kshe.com.au" class="info-link">hello@kshe.com.au</a>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Wholesale & Stockist</span>
+          <a href="mailto:trade@kshe.com.au" class="info-link">trade@kshe.com.au</a>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Phone</span>
+          <a href="tel:+61280001234" class="info-link">+61 2 8000 1234</a>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Studio & HQ</span>
+          <address>
+            12 Botanical Lane<br />
+            Byron Bay NSW 2481<br />
+            Australia
+          </address>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Hours</span>
+          <p>Monday – Friday: 9am – 5pm AEST<br />Saturday: 10am – 2pm AEST</p>
+        </div>
+        <div class="social-links">
+          <span class="info-label">Follow Along</span>
+          <div class="social-row">
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Pinterest</a>
+            <a href="#" class="social-link">TikTok</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form-wrap">
+        <div class="form-header">
+          <h2>Send us a message</h2>
+          <p>We'll get back to you within one business day.</p>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Jane" required />
+            </div>
+            <div class="field">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option value="product">Product Enquiry</option>
+              <option value="order">Order Support</option>
+              <option value="wholesale">Wholesale / Stockist</option>
+              <option value="press">Press & Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help…" required></textarea>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="btn submit-btn">Send Message</button>
+          </div>
+          <div class="form-success" id="form-success" aria-live="polite">
+            <span class="success-icon">✓</span>
+            <p>Thank you! Your message has been received. We'll be in touch soon.</p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAP PLACEHOLDER -->
+  <section class="map-section">
+    <div class="map-placeholder">
+      <div class="map-overlay">
+        <div class="map-card">
+          <span class="info-label">Find Us</span>
+          <h3>KSHE Studio</h3>
+          <p>12 Botanical Lane<br />Byron Bay NSW 2481</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('form-success');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    // Simulate submission
+    setTimeout(() => {
+      form.style.opacity = '0';
+      form.style.pointerEvents = 'none';
+      if (success) {
+        success.classList.add('show');
+      }
+    }, 400);
+  });
+</script>
+
+<style>
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: calc(var(--header-h) + 6rem) 2rem 6rem;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 90% 20%, rgba(107, 87, 68, 0.35) 0%, transparent 60%);
+  }
+
+  .page-hero .container { position: relative; z-index: 1; }
+  .page-hero .section-label { color: var(--stone); }
+
+  .page-hero h1 {
+    color: var(--cream);
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin-top: 0.5rem;
+  }
+
+  .page-hero h1 em { font-style: italic; color: var(--sand); }
+
+  /* ── CONTACT SECTION ── */
+  .contact-section {
+    background: var(--warm-white);
+    padding: 6rem 2rem;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  /* ── INFO ── */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+
+  .info-block {}
+
+  .info-label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-bottom: 0.5rem;
+  }
+
+  .info-link {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .info-link:hover { color: var(--bark); }
+
+  address {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+
+  .info-block p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .social-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  .social-link {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color var(--transition);
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .social-link::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    transition: transform var(--transition);
+  }
+
+  .social-link:hover { color: var(--bark); }
+  .social-link:hover::before { transform: translateX(3px); }
+
+  /* ── FORM ── */
+  .contact-form-wrap {
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 2px;
+  }
+
+  .form-header { margin-bottom: 2.5rem; }
+  .form-header h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .form-header p { font-size: 0.9rem; }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: opacity 0.4s ease;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--taupe);
+  }
+
+  input, select, textarea {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--dark);
+    background: var(--warm-white);
+    border: 1px solid var(--sand);
+    padding: 0.85rem 1rem;
+    outline: none;
+    border-radius: 0;
+    appearance: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    width: 100%;
+  }
+
+  input::placeholder, textarea::placeholder { color: var(--stone); }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--bark);
+    box-shadow: 0 0 0 3px rgba(107, 87, 68, 0.08);
+  }
+
+  textarea { resize: vertical; min-height: 140px; }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239c8878' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+
+  .form-footer { display: flex; }
+
+  .submit-btn {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ── SUCCESS STATE ── */
+  .form-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+    gap: 1rem;
+    position: absolute;
+    inset: 0;
+    background: var(--cream);
+  }
+
+  .contact-form-wrap { position: relative; overflow: hidden; }
+
+  .form-success.show { display: flex; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--bark);
+    color: var(--cream);
+    font-size: 1.5rem;
+  }
+
+  .form-success p {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text);
+    max-width: 360px;
+  }
+
+  /* ── MAP ── */
+  .map-section { height: 360px; }
+
+  .map-placeholder {
+    height: 100%;
+    background:
+      linear-gradient(160deg, #c4b5a5 0%, #9c8878 40%, #6b5744 100%);
+    position: relative;
+  }
+
+  .map-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+  }
+
+  .map-card {
+    background: var(--warm-white);
+    padding: 1.5rem 2rem;
+    max-width: 240px;
+    box-shadow: 0 4px 30px rgba(42,31,23,0.12);
+  }
+
+  .map-card h3 {
+    font-size: 1.1rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .map-card p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--text-light);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-info { position: static; }
+    .contact-form-wrap { padding: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>

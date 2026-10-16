@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    category: "Products",
+    items: [
+      {
+        q: "Are KSHE products suitable for sensitive skin?",
+        a: "Yes. All KSHE formulas are developed with sensitive skin in mind. We avoid common irritants such as synthetic fragrances, parabens, and sulphates. We always recommend performing a patch test before full application, especially for those with reactive skin."
+      },
+      {
+        q: "Are your products vegan and cruelty-free?",
+        a: "Absolutely. KSHE is 100% vegan and cruelty-free. We never test on animals at any stage of development or production, and no animal-derived ingredients are used in any of our formulations."
+      },
+      {
+        q: "How long will one product last with regular use?",
+        a: "This varies by product, but as a general guide: most serums last 6–8 weeks with twice-daily use, moisturisers last 8–10 weeks, and eye treatments last approximately 10–12 weeks. Each product includes a recommended usage guide on the packaging."
+      },
+      {
+        q: "Can I use KSHE products during pregnancy?",
+        a: "We recommend consulting with your healthcare provider before introducing any new skincare during pregnancy or breastfeeding. While our formulas are clean and gentle, every individual's needs are unique and professional guidance is always advised."
+      }
+    ]
+  },
+  {
+    category: "Ingredients & Formulation",
+    items: [
+      {
+        q: "Where do you source your ingredients?",
+        a: "We partner with certified organic farms and ethical suppliers across Australia, New Zealand, and select regions of Southeast Asia. All suppliers are vetted for sustainable practices and fair labour standards before any partnership is confirmed."
+      },
+      {
+        q: "What does 'clean beauty' mean at KSHE?",
+        a: "For us, clean means transparent, non-toxic, and effective. We maintain a 'never-use' list of over 1,500 ingredients that have been linked to irritation, hormone disruption, or environmental harm. Every formula is third-party tested and fully ingredient-disclosed."
+      },
+      {
+        q: "Do your products contain any preservatives?",
+        a: "Yes — safe, naturally-derived preservatives are used to maintain product integrity and prevent microbial growth, which is essential for your safety. We use only preservatives that have been rigorously tested and approved for use in clean beauty formulations."
+      }
+    ]
+  },
+  {
+    category: "Orders & Delivery",
+    items: [
+      {
+        q: "Do you ship internationally?",
+        a: "Currently, KSHE ships within Australia and to New Zealand. We are actively exploring international shipping options and hope to expand to further markets soon. Join our mailing list to be notified when your region becomes available."
+      },
+      {
+        q: "What is your return policy?",
+        a: "We offer a 30-day satisfaction guarantee. If you're not completely happy with your purchase, please contact our team within 30 days of receipt and we will work with you to find a resolution — whether that's an exchange, credit, or refund."
+      },
+      {
+        q: "How can I track my order?",
+        a: "Once your order is dispatched, you'll receive an email confirmation with a tracking number. You can use this to monitor your delivery in real time through our courier partner's portal."
+      }
+    ]
+  },
+  {
+    category: "Sustainability",
+    items: [
+      {
+        q: "What is KSHE doing for the environment?",
+        a: "Sustainability is central to everything we do. Our packaging is made from recycled and recyclable materials, we offer a refill programme for select products, all shipments are carbon-offset, and we donate 1% of revenue to environmental restoration projects across Australia."
+      },
+      {
+        q: "Can I recycle my KSHE packaging?",
+        a: "Yes! All primary packaging is recyclable through standard kerbside collection. Some specialist components (like pump mechanisms) should be taken to a soft plastics drop-off point. Detailed recycling guidance is printed on every product."
+      }
+    ]
+  }
+];
+---
+
+<Layout title="FAQ" description="Answers to your most common questions about KSHE products, ingredients, orders, and sustainability.">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Got Questions?</span>
+      <h1>Frequently<br /><em>Asked</em></h1>
+    </div>
+  </section>
+
+  <!-- FAQ BODY -->
+  <section class="faq-section">
+    <div class="container faq-layout">
+
+      <!-- Sidebar nav -->
+      <aside class="faq-sidebar">
+        <p class="sidebar-label">Jump to</p>
+        <ul>
+          {faqs.map(group => (
+            <li>
+              <a href={`#${group.category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}`}>
+                {group.category}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="sidebar-cta">
+          <p>Didn't find your answer?</p>
+          <a href="/contact" class="btn">Contact Us</a>
+        </div>
+      </aside>
+
+      <!-- FAQ groups -->
+      <div class="faq-content">
+        {faqs.map(group => (
+          <div class="faq-group" id={group.category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}>
+            <h2>{group.category}</h2>
+            <div class="faq-list">
+              {group.items.map(item => (
+                <details class="faq-item">
+                  <summary>{item.q}</summary>
+                  <div class="faq-answer">
+                    <p>{item.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STILL HAVE QUESTIONS -->
+  <section class="faq-bottom">
+    <div class="container faq-bottom-inner">
+      <div>
+        <h2>Still have a question?</h2>
+        <p>Our team typically responds within one business day. We're here to help.</p>
+      </div>
+      <a href="/contact" class="btn btn-light">Get in Touch</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: calc(var(--header-h) + 6rem) 2rem 6rem;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 60%, rgba(107, 87, 68, 0.3) 0%, transparent 65%);
+  }
+
+  .page-hero .container { position: relative; z-index: 1; }
+  .page-hero .section-label { color: var(--stone); }
+
+  .page-hero h1 {
+    color: var(--cream);
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin-top: 0.5rem;
+  }
+
+  .page-hero h1 em { font-style: italic; color: var(--sand); }
+
+  /* ── FAQ SECTION ── */
+  .faq-section {
+    background: var(--warm-white);
+    padding: 6rem 2rem;
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR ── */
+  .faq-sidebar {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+
+  .sidebar-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-bottom: 1rem;
+  }
+
+  .faq-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .faq-sidebar a {
+    display: block;
+    padding: 0.6rem 1rem;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+  }
+
+  .faq-sidebar a:hover {
+    color: var(--bark);
+    border-color: var(--bark);
+  }
+
+  .sidebar-cta p {
+    font-size: 0.8rem;
+    color: var(--taupe);
+    margin-bottom: 1rem;
+  }
+
+  /* ── FAQ CONTENT ── */
+  .faq-content { min-width: 0; }
+
+  .faq-group {
+    margin-bottom: 4rem;
+    scroll-margin-top: calc(var(--header-h) + 2rem);
+  }
+
+  .faq-group h2 {
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--sand);
+    margin-bottom: 0;
+  }
+
+  .faq-list { display: flex; flex-direction: column; }
+
+  .faq-item {
+    border-bottom: 1px solid var(--sand);
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: 1.5rem 0;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color var(--transition);
+    user-select: none;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '+';
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--taupe);
+    flex-shrink: 0;
+    transition: transform var(--transition), color var(--transition);
+  }
+
+  .faq-item[open] summary { color: var(--bark); }
+  .faq-item[open] summary::after {
+    transform: rotate(45deg);
+    color: var(--bark);
+  }
+
+  .faq-answer {
+    padding: 0 0 1.5rem;
+    animation: fadeDown 0.3s ease;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-light);
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── BOTTOM CTA ── */
+  .faq-bottom {
+    background: var(--bark);
+    padding: 5rem 2rem;
+  }
+
+  .faq-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .faq-bottom h2 {
+    color: var(--cream);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-bottom p { color: var(--sand); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .faq-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .faq-sidebar { position: static; }
+    .faq-bottom-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>

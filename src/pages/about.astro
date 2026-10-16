@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About" description="The story behind KSHE — our values, mission, and the people who make it all possible.">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Our Story</span>
+      <h1>Beauty with<br /><em>purpose</em></h1>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="container story-grid">
+      <div class="story-visual">
+        <div class="img-main"></div>
+        <div class="img-accent"></div>
+        <div class="story-stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Years of crafting</span>
+        </div>
+      </div>
+      <div class="story-text">
+        <span class="section-label">How it began</span>
+        <h2>From a small kitchen to a movement</h2>
+        <p>KSHE was born from a simple frustration: the inability to find skincare that was both genuinely effective and completely clean. Our founder, a passionate botanist and former dermatology researcher, set out to bridge that gap.</p>
+        <p style="margin-top:1rem">What started as small-batch formulations in a Byron Bay kitchen quickly grew into something far greater — a community of conscious consumers who refuse to compromise on what they put on their skin.</p>
+        <p style="margin-top:1rem">Today, KSHE is proudly Australian-made, cruelty-free, and committed to transparency in every facet of our business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="container">
+      <div class="mission-inner">
+        <span class="section-label">Our Mission</span>
+        <blockquote>
+          "To make clean, science-backed skincare accessible to everyone — without ever compromising on ethics, efficacy, or the environment."
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <div class="container">
+      <div class="team-header">
+        <span class="section-label">The People Behind KSHE</span>
+        <h2>A team that cares<br />as much as you do</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img t1"></div>
+          <div class="team-info">
+            <h3>Kaia Sherwood</h3>
+            <span class="team-role">Founder & Chief Formulator</span>
+            <p>Botanist, researcher, and lifelong advocate for clean beauty. Kaia's scientific rigour and passion for nature drives every formula.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-img t2"></div>
+          <div class="team-info">
+            <h3>Elliot Marchand</h3>
+            <span class="team-role">Head of Sustainability</span>
+            <p>With a background in environmental science, Elliot ensures every decision at KSHE honours our commitment to the planet.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-img t3"></div>
+          <div class="team-info">
+            <h3>Priya Nair</h3>
+            <span class="team-role">Lead Dermatologist</span>
+            <p>Priya brings rigorous clinical expertise, ensuring every product is both safe and clinically effective for all skin types.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <div class="container">
+      <span class="section-label">What Guides Us</span>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <h3>Transparency</h3>
+          <p>Every ingredient in every product is disclosed in full. We believe you have the right to know exactly what touches your skin.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <h3>Efficacy</h3>
+          <p>We don't formulate for trends. Every product is rigorously tested to deliver real, measurable results for real people.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <h3>Integrity</h3>
+          <p>From sourcing to shelf, we hold ourselves to the highest ethical standards — for our community, and for the world we share.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">04</span>
+          <h3>Sustainability</h3>
+          <p>Refillable packaging, carbon-offset shipping, and zero-waste manufacturing goals. Because beautiful skin shouldn't cost the earth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="container">
+      <h2>Questions? We'd love<br /><em>to hear from you.</em></h2>
+      <a href="/contact" class="btn btn-light" style="margin-top:2rem">Get in Touch</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: calc(var(--header-h) + 6rem) 2rem 6rem;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(107, 87, 68, 0.35) 0%, transparent 65%);
+  }
+
+  .page-hero .container { position: relative; z-index: 1; }
+
+  .page-hero .section-label { color: var(--stone); }
+
+  .page-hero h1 {
+    color: var(--cream);
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin-top: 0.5rem;
+  }
+
+  .page-hero h1 em { font-style: italic; color: var(--sand); }
+
+  /* ── STORY ── */
+  .story { background: var(--warm-white); padding: 7rem 2rem; }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .story-visual {
+    position: relative;
+    height: 520px;
+  }
+
+  .img-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 80%; height: 80%;
+    background: linear-gradient(135deg, var(--sand) 0%, var(--stone) 100%);
+    border-radius: 2px;
+  }
+
+  .img-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 55%; height: 50%;
+    background: linear-gradient(135deg, var(--bark) 0%, var(--taupe) 100%);
+    border-radius: 2px;
+    opacity: 0.85;
+  }
+
+  .story-stat {
+    position: absolute;
+    top: 50%; left: 65%;
+    transform: translate(-50%, -50%);
+    background: var(--warm-white);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(42,31,23,0.1);
+    z-index: 2;
+  }
+
+  .stat-num {
+    display: block;
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-top: 0.25rem;
+  }
+
+  .story-text h2 { margin: 0.5rem 0 1.5rem; }
+
+  /* ── MISSION ── */
+  .mission {
+    background: var(--bark);
+    padding: 6rem 2rem;
+  }
+
+  .mission-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .mission .section-label { color: var(--sand); }
+
+  .mission blockquote {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.5;
+    margin-top: 1.5rem;
+  }
+
+  /* ── TEAM ── */
+  .team { background: var(--cream); padding: 7rem 2rem; }
+
+  .team-header { text-align: center; margin-bottom: 4rem; }
+  .team-header h2 { margin-top: 0.5rem; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .team-card {
+    background: var(--warm-white);
+    overflow: hidden;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .team-card:hover {
+    box-shadow: 0 12px 50px rgba(42,31,23,0.1);
+    transform: translateY(-4px);
+  }
+
+  .team-img {
+    height: 320px;
+  }
+
+  .t1 { background: linear-gradient(160deg, #9c8878 0%, #c4b5a5 100%); }
+  .t2 { background: linear-gradient(160deg, #7a6455 0%, #9c8878 100%); }
+  .t3 { background: linear-gradient(160deg, #6b5744 0%, #8a7364 100%); }
+
+  .team-info { padding: 2rem; }
+  .team-info h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+
+  .team-role {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-bottom: 1rem;
+  }
+
+  /* ── PILLARS ── */
+  .pillars { background: var(--warm-white); padding: 7rem 2rem; }
+
+  .pillars .section-label { display: block; text-align: center; margin-bottom: 3rem; }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--sand);
+  }
+
+  .pillar {
+    padding: 2.5rem;
+    border-right: 1px solid var(--sand);
+    transition: background var(--transition);
+  }
+
+  .pillar:last-child { border-right: none; }
+  .pillar:hover { background: var(--cream); }
+
+  .pillar-num {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--sand);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .pillar h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+
+  /* ── ABOUT CTA ── */
+  .about-cta {
+    background: var(--dark);
+    text-align: center;
+    padding: 7rem 2rem;
+  }
+
+  .about-cta h2 {
+    color: var(--cream);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .about-cta h2 em { font-style: italic; color: var(--sand); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .pillar:nth-child(2) { border-right: none; }
+    .pillar:nth-child(3) { border-top: 1px solid var(--sand); }
+    .pillar:nth-child(4) { border-top: 1px solid var(--sand); border-right: none; }
+  }
+
+  @media (max-width: 768px) {
+    .story-grid { grid-template-columns: 1fr; }
+    .story-visual { height: 320px; }
+    .team-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; border: none; }
+    .pillar { border-right: none; border-bottom: 1px solid var(--sand); }
+  }
+</style>
