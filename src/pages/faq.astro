@@ -141,6 +141,12 @@ const faqs = [
 </Layout>
 
 <style>
+  /* ── HEADER NAV (white over dark hero) ── */
+  @media (min-width: 769px) {
+    :global(#site-header:not(.scrolled) #main-nav a) { color: #fff; }
+    :global(#site-header:not(.scrolled) #main-nav a::after) { background: #fff; }
+  }
+
   /* ── PAGE HERO ── */
   .page-hero {
     padding: calc(var(--header-h) + 6rem) 2rem 6rem;
